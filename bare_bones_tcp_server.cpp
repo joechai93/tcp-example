@@ -34,9 +34,8 @@ SOFTWARE.
 
 #include "bare_bones_tcp_server.h"
 
-BareBonesTCPServer::BareBonesTCPServer(std::string ip_address, uint16_t port, std::function<std::string(std::string)> action_function)
+BareBonesTCPServer::BareBonesTCPServer(uint16_t port, std::function<std::string(std::string)> action_function)
     : m_client_socket{}
-    , m_ip_address{ip_address}
     , m_port{port}
     , m_run_server{true}
 {
@@ -67,8 +66,6 @@ int BareBonesTCPServer::RunServer(void)
     hint.sin_family = AF_INET;
     hint.sin_port = htons(m_port);
     hint.sin_addr.s_addr = INADDR_ANY;
-    // inet_pton(AF_INET, "192.168.20.8", &hint.sin_addr);
-    //inet_pton(AF_INET, m_ip_address.c_str(), &hint.sin_addr);
     if (bind( m_listening, (sockaddr*)&hint, sizeof(hint)) == -1)
     {
         std::cerr << "Can't bind to IP/Port\n";

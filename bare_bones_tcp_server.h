@@ -31,14 +31,13 @@ SOFTWARE.
 class BareBonesTCPServer
 {
     public:
-        BareBonesTCPServer(std::string ip_address, uint16_t port, std::function<std::string(std::string)> action_function);
+        BareBonesTCPServer(uint16_t port, std::function<std::string(std::string)> action_function);
         ~BareBonesTCPServer();
         void Shutdown();
         int RunServer(void);
     private:
         int m_listening;
         int m_client_socket;
-        std::string m_ip_address;
         uint16_t m_port;
         bool m_run_server;
         std::function<std::string(std::string)> m_action_function;

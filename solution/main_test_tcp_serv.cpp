@@ -42,7 +42,7 @@ int main()
 
     input_function = std::bind(action_function, std::placeholders::_1);
 
-    BareBonesTCPServer tcp_server("127.0.0.1", 54000, input_function);
+    BareBonesTCPServer tcp_server( 54000, input_function);
     tcp_server.RunServer();
 
     return 0;
