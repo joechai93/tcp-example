@@ -33,7 +33,7 @@ class BareBonesTCPClient
         BareBonesTCPClient(std::string ip_address, uint16_t port);
         ~BareBonesTCPClient();
         void Shutdown();
-        int RunServer(void);
+        int RunClient(void);
     private:
         int m_listening;
         int m_sock;

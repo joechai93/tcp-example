@@ -27,7 +27,7 @@ SOFTWARE.
 int main()
 {
     BareBonesTCPClient tcp_client("192.168.1.100", 54000);
-    tcp_client.RunServer();
+    tcp_client.RunClient();
 
     return 0;
 }

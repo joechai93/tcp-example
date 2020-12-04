@@ -51,7 +51,7 @@ BareBonesTCPClient::~BareBonesTCPClient()
     std::cout << "closed client socket " << std::endl;
 }
 
-int BareBonesTCPClient::RunServer(void)
+int BareBonesTCPClient::RunClient(void)
 {
     if (m_sock == -1)
     {
